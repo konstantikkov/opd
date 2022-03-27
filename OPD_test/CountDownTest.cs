@@ -10,12 +10,14 @@ namespace OPD_test {
             var subscriber = new Subscriber(timer, "subscriber");
             timer.Skip(1000, "event");
         }
+        [Test]
         public void UnsubscribeOne() {
             CountDown timer = new CountDown();
             var subscriber = new Subscriber(timer, "subscriber");
             subscriber.Ubsubscribe();
             timer.Skip(1000, "event");
         }
+        [Test]
         public void SubscribeOneFullCycle() {
             CountDown timer = new CountDown();
             var subscriber = new Subscriber(timer, "subscriber");
@@ -24,6 +26,7 @@ namespace OPD_test {
             subscriber.Ubsubscribe();
             timer.Skip(1000, "event_3");
         }
+        [Test]
         public void SubscribeSeveral() {
             CountDown timer = new CountDown();
             Subscriber[] subscribers = { 
@@ -33,6 +36,7 @@ namespace OPD_test {
             };
             timer.Skip(1000, "event_1");
         }
+        [Test]
         public void SubscribeSeveralFullCycle() {
             CountDown timer = new CountDown();
             Subscriber[] subscribers = {
